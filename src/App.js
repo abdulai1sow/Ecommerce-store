@@ -6,7 +6,7 @@ import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar';
 
 function App() {
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState(null)
 
   return (
     <main className="App">
