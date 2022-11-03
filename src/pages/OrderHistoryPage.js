@@ -8,7 +8,7 @@ const OrderHistoryPage = () => {
     try {
       userService.checkToken()
       const expDate = await  userService.checkToken()
-
+console.log(expDate);
      } catch (err) {
       console.log(err);
     }

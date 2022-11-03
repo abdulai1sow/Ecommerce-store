@@ -36,9 +36,13 @@ async function login(req, res) {
 }
 
 function createJWT(user) {
-  return jwt.sign({user},process.env.SECRET,{expiresIn: '24h'})
+  return jwt.sign({ user }, process.env.SECRET, { expiresIn: '24h' })
 }
 
-module.exports = {
-  create, login
+function checkToken(req, res) {
+  // req.user will always be there for you when a token is sent
+  console.log('req.user', req.user);
+  res.json(req.exp);
 }
+
+module.exports = { create, login, checkToken }
