@@ -1,6 +1,19 @@
 import React from 'react'
+import * as userService from '../utilities/users-service'
+
 
 const OrderHistoryPage = () => {
+
+  const handleCheckToken = async () => {
+    try {
+      userService.checkToken()
+      const expDate = await  userService.checkToken()
+
+     } catch (err) {
+      console.log(err);
+    }
+  }
+
   return (
     <div>
       <h1> OrderHistoryPage </h1>
