@@ -8,20 +8,17 @@ require('./config/database');
 
 const app = express()
 const PORT = process.env.PORT || 3001
+
+
 //middleware
 app.use(morgan('dev'))
 app.use(express.json())
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')))
 app.use(express.static(path.join(__dirname, 'build')))
 
+app.use('/api/users', require('./routes/api/users'))
 //API Routes
-app.get('/orders', (req, res) => {
-  
-})
 
-app.get('/orders/new', (req, res) => {
-  
-})
 
 //Catch All to serve the production app
 app.get('/*', (req, res) => {

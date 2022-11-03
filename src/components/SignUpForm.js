@@ -1,7 +1,8 @@
 import { Component } from 'react'
+import {signUp} from '../utilities/users-service'
 
 export default class SignUpForm extends Component {
-
+//class components
   state = {
     name: '',
     email: '',
@@ -14,10 +15,24 @@ export default class SignUpForm extends Component {
     this.setState({ [evt.target.name]: evt.target.value, error: ''})
   }
 
-  handleSubmit = (evt) => {
+  handleSubmit = async (evt) => {
     evt.preventDefault()
     //testing form
-    alert(JSON.stringify(this.state));
+    // alert(JSON.stringify(this.state));
+    try {
+      //create thr formData to send to the backend
+      const formData = {
+        name: this.state.name,
+        email: this.state.email,
+        password: this.state.password
+      }
+      //pass the formData to the signup function
+      const user = await signUp(formData)
+      this.props.setUser(user)
+      console.log(user);
+    } catch {
+      this.setState({error: 'sign up failed - try agian'})
+    }
   }
 
 
