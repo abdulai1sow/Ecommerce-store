@@ -21,6 +21,10 @@ const userSchema = new Schema({
     trim: true,
     minLength: 3,
     required: true
+  },
+  admin: {
+    type: Boolean,
+    default: false
   }
 },
   { 
