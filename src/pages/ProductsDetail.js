@@ -1,18 +1,26 @@
-import {useParams} from 'react'
+import {useParams} from 'react-router-dom'
 
 
-const ProductsDetail = ({ product }) => {
-  const { products, setProducts } = product
+const ProductsDetail = ({ products }) => {
+  console.log(products,'lloloooo')
+  // const { products, setProducts } = product
   
   const { id } = useParams()
-  const thisProduct = product.find(prod => prod.id === id )
+  console.log(id, 'iidididi')
+  // const thisProduct = products.find(prod => prod.id === id)
+  const thisProduct = products[id]
+  console.log(thisProduct, 'ooooooook');
+  const {image,title,descriptoin, price, category} = thisProduct
   return (
     <div>
+      <h1>
+        
       ProductsList
+     </h1>
       <img src={image} alt="image" />
       <h4>{ title}</h4>
       <h4>{ category}</h4>
-      <h4>{ discriptoin}</h4>
+      <h4>{ descriptoin}</h4>
       <p>{ price}</p>
     </div>
   )

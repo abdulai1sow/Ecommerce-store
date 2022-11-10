@@ -9,10 +9,21 @@ import ProductsDetail from './pages/ProductsDetail';
 
 function App() {
   const [user, setUser] = useState(getUser())
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState(null)
+
+  const getProducts = async () => {
+    try {
+      const res = await fetch('https://fakestoreapi.com/products')
+      const data = await res.json()
+      console.log(data)
+      setProducts(data)
+    } catch (err) {
+      console.log(err)
+    }
+  }
   useEffect(() => {
-    // setUser
-  })
+    getProducts()
+  }, [])
 
   return (
     <main className="App">
@@ -25,7 +36,7 @@ function App() {
               
               <Route path='/orders' element={<OrderHistoryPage product={products} />} />
               
-            <Route path='/product/:symbol' element={<ProductsDetail />} />
+            <Route path='/products/:id' element={<ProductsDetail products={products} />} />
           </Routes>
           
         </div>
