@@ -23,12 +23,12 @@ const NewOrderPage = () => {
       NewOrderPage
       {products && products.map((product) => {
         console.log(products);
-        const { title, image, price, id } = product
+        const { title, image, price, id, symbol } = product
         return (
           <div key={id} >
             <div>
               <h3>
-                <Link to={`/products/${id}`}> {title} </Link>
+                <Link to={`/products/${symbol}`}> {title} </Link>
               </h3>
               <img src={image} alt="" />
               <p>{price}</p>

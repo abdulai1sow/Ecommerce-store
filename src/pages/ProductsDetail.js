@@ -1,15 +1,9 @@
 import {useParams} from 'react'
 
-category
-description
-id
-image
-price
-rating
-{ rate: 2.9, count: 470 }
-title
 
-const ProductsDetail = (product) => {
+const ProductsDetail = ({ product }) => {
+  const { products, setProducts } = product
+  
   const { id } = useParams()
   const thisProduct = product.find(prod => prod.id === id )
   return (
@@ -19,6 +13,7 @@ const ProductsDetail = (product) => {
       <h4>{ title}</h4>
       <h4>{ category}</h4>
       <h4>{ discriptoin}</h4>
+      <p>{ price}</p>
     </div>
   )
 }
