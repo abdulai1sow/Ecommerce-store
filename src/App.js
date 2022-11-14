@@ -6,6 +6,8 @@ import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar';
 import {getUser} from './utilities/users-service'
 import ProductsDetail from './pages/ProductsDetail';
+import Cart from './pages/Cart'
+import Footer from './components/Footer'
 
 function App() {
   const [user, setUser] = useState(getUser())
@@ -36,13 +38,16 @@ function App() {
               
               <Route path='/orders' element={<OrderHistoryPage product={products} />} />
               
-            <Route path='/products/:id' element={<ProductsDetail products={products} />} />
+              <Route path='/products/:id' element={<ProductsDetail products={products} />} />
+              
+              <Route path='/cart/:id' element={<ProductsDetail products={products} />} />
+              
           </Routes>
-          
         </div>
         ) : (
-            <AuthPage setUser={setUser} />
-      )}
+          <AuthPage setUser={setUser} />
+          )}
+          <Footer />
     </main>
   );
 }
