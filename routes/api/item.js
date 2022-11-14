@@ -1,10 +1,10 @@
-const { Router } = require('express');
-const itemController = require('../controllers/api/items');
-const router = Router();
+const express = require('express');
+const router = express.Router();
+const itemsCtrl = require('../../controllers/api/Item');
 
-router.get('/items', itemController.get_items);
-router.post('/items', itemController.post_item);
-router.put('/items/:id', itemController.update_item);
-router.delete('/items/:id', itemController.delete_item);
+// GET /api/items
+router.get('/', itemsCtrl.index);
+// GET /api/items/:id
+router.get('/:id', itemsCtrl.show);
 
 module.exports = router;

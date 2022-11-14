@@ -11,7 +11,7 @@ import Footer from './components/Footer'
 
 function App() {
   const [user, setUser] = useState(getUser())
-  const [products, setProducts] = useState(null)
+  const [products, setProducts] = useState({})
 
   const getProducts = async () => {
     try {
@@ -38,9 +38,9 @@ function App() {
               
               <Route path='/orders' element={<OrderHistoryPage product={products} />} />
               
-              <Route path='/products/:id' element={<ProductsDetail products={products} />} />
+              <Route path='/products/:id' element={<ProductsDetail products={products} setProducts={setProducts} />} />
               
-              <Route path='/cart/:id' element={<ProductsDetail products={products} />} />
+              <Route path='/cart/:id' element={<Cart products={products} />} />
               
           </Routes>
         </div>

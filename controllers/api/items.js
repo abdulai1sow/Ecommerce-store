@@ -1,26 +1,26 @@
-const item = require('../../models/item');
+const Item = require('../../models/Item');
 
-const get_items = (req, res) => {
-  item.find().sort({ date: -1 }).then(items => res.json(items));
+module.exports = {
+  index,
+  show
+};
+
+async function index(req, res) {
+  try {
+    const items = await Item.find({}).sort('name').populate('category').exec();
+    // re-sort based upon the sortOrder of the categories
+    items.sort((a, b) => a.category.sortOrder - b.category.sortOrder);
+    res.status(200).json(items);
+  } catch (e) {
+    res.status(400).json({ msg: e.message });
+  }
 }
 
-const post_item = (req, res) => {
-  const newItem = new item(req.body);
-  newItem.save().then(item => res.json(item));
+async function show(req, res) {
+  try {
+    const item = await Item.findById(req.params.id);
+    res.status(200).json(item);
+  } catch (e) {
+    res.status(400).json({ msg: e.message });
+  }
 }
-
-const update_item = (req, res) => {
-  item.findByIdAndUpdate({ _id: req.params.id }, req.body).then(function (item) {
-    item.findOne({ _id: req.params.id }).then(function (item) {
-      res.json(item);
-    });
-  });
-}
-
-const delete_item = (req, res) => {
-  item.findByIdAndDelete({ _id: req.params.id }).then(function (item) {
-    res.json({ success: true });
-  });
-}
-
-module.exports = { delete_item, update_item, post_item, get_items }

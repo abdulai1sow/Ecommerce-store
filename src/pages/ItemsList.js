@@ -12,6 +12,7 @@ const ItemsList = ({products}) => {
       {products && products.map((product) => {
         console.log(products);
         const { title, image, price, id } = product
+        console.log(product, 'lililililololo');
         return (
 
           <div className='Tdiv' key={id} >

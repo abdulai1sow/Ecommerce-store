@@ -2,21 +2,21 @@ import { useParams } from 'react-router-dom'
 import { BsCartPlus } from 'react-icons/bs'
 
 
-const ProductsDetail = ({ products }) => {
-  console.log(products,'lloloooo')
-  // const { products, setProducts } = product
+const ProductsDetail = ({ products, setProducts }) => {
+  // const { products, setProducts } = props
   
   const { id } = useParams()
-  console.log(id, 'iidididi')
   // const thisProduct = products.find(prod => prod.id === id)
   const thisProduct = products[id]
   console.log(thisProduct, 'ooooooook');
   const { image, title, descriptoin, price, category } = thisProduct
   
   const addItem = () => {
-    thisProduct()
+    {setProducts([...products, thisProduct]) }
+    const calc = price += price
 
   }
+
   return (
     <div className=' pBody' >
       <h1> SALE </h1>
@@ -32,7 +32,10 @@ const ProductsDetail = ({ products }) => {
       <button onClick={addItem} >
         <BsCartPlus style={{ marginRight: '5px'}} />
         ADD TO CART
+
+      console.log(onClick(),'lsjflsjflsjfls');
       </button>
+
     </div>
   )
 }
