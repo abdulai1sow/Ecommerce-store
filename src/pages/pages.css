@@ -27,3 +27,25 @@
   width:200px;
   height: 300px;
 }
+
+/* ===========PRODUCT========== */
+ .pContainer{
+  display: flex;
+  flex-direction: column;
+  /* text-align: center; */
+  margin: 0px;
+  padding: 0px;
+ }
+ .pImg{
+  width: 300px;
+  height: 200px;
+ }
+ .pContainer > p{
+  margin-top: 0px
+ }
+ .pBody{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+ }

@@ -3,6 +3,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  border-top: solid 5px #000;
+
 }
 .pContainer{
   width: 250px;

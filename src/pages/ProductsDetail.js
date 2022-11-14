@@ -18,16 +18,16 @@ const ProductsDetail = ({ products }) => {
 
   }
   return (
-    <div>
-      <h1>
-        
-      ProductsList
-     </h1>
-      <img src={image} alt="" />
+    <div className=' pBody' >
+      <h1> SALE </h1>
+      <div className='pContainer'>
+
       <h4>{ title}</h4>
+        <img className='pImg' src={image} alt="" />
       <h4>{ category}</h4>
       <h4>{ descriptoin}</h4>
       <p>{ price}</p>
+      </div>
 
       <button onClick={addItem} >
         <BsCartPlus style={{ marginRight: '5px'}} />
