@@ -1,0 +1,29 @@
+.itemsList{
+  background-color: #fff;
+}
+.Ih2{
+  text-align: center;  
+}
+
+.Fdiv{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.Fdiv > h3{
+  max-width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.iList{
+  /* width: 600px; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.iImg {
+  width:200px;
+  height: 300px;
+}

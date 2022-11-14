@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import AuthPage from './pages/AuthPage';
-import NewOrderPage from './pages/NewOrderPage';
+import ItemsList from './pages/ItemsList';
 import OrderHistoryPage from './pages/OrderHistoryPage';
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar';
@@ -34,7 +34,7 @@ function App() {
         <div>
             <Navbar user={user} setUser={setUser} />
           <Routes>
-              <Route path='/orders/new' element={<NewOrderPage setProducts={setProducts} products={products} />} />
+              <Route path='/orders/new' element={<ItemsList setProducts={setProducts} products={products} />} />
               
               <Route path='/orders' element={<OrderHistoryPage product={products} />} />
               
