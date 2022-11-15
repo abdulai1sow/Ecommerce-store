@@ -19,12 +19,12 @@ const Footer = () => {
       </ul>
 
       <div className='pContainer'>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore perferendis atque possimus sequi suscipit ex facilis .</p>
+        <p style={{marginTop: '10px'}}> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore perferendis atque possimus sequi suscipit ex facilis.</p>
 
       </div>
 
       <div>
-        <p>with <BsSuitHeartFill style={{color: 'red'}} /> from ATL</p>
+        <p> <BsSuitHeartFill style={{color: 'red'}} /> from ATL</p>
       </div>
 
     </div>

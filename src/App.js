@@ -34,20 +34,20 @@ function App() {
         <div>
             <Navbar user={user} setUser={setUser} />
           <Routes>
+              <Route path='/' element={<OrderHistoryPage product={products} />} />
+
               <Route path='/orders/new' element={<ItemsList setProducts={setProducts} products={products} />} />
-              
-              <Route path='/orders' element={<OrderHistoryPage product={products} />} />
               
               <Route path='/products/:id' element={<ProductsDetail products={products} setProducts={setProducts} />} />
               
               <Route path='/cart/:id' element={<Cart products={products} />} />
               
           </Routes>
+            <Footer />
         </div>
         ) : (
           <AuthPage setUser={setUser} />
           )}
-          <Footer />
     </main>
   );
 }

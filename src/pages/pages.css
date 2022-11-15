@@ -49,3 +49,32 @@
   flex-direction: column;
 
  }
+
+ /* =========HOME======== */
+ .hIntro{
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+ }
+ .hImg{
+    width: 300px;
+    height: 500px;
+ }
+ .slide2nd{
+    /* width: 100px; */
+     display: flex;
+    flex-direction: row;
+ }
+ .img2nd{
+    width: 450px;
+    height: 500px;
+    margin-right: 10px;
+    display: flex;
+    row-gap: 10px;
+    margin-bottom: 40px;
+ }
+ .hH2{
+    margin-bottom: 70px;
+    text-align: center;
+    margin-top: 50px;
+ }

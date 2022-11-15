@@ -6,7 +6,7 @@ const AuthPage = ({ setUser }) => {
   const [showSignUp, setShowSignUp] = useState(true)
   return (
     <div>
-      AuthPage
+      {/* AuthPage */}
       {showSignUp ? <SignUpForm setUser={ setUser} /> : <LoginForm setUser={setUser} /> }
 
       <button onClick={() => setShowSignUp(!showSignUp)}>{ showSignUp ? 'Log in' : 'Sign Up'} </button>

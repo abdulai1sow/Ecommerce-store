@@ -12,9 +12,12 @@ const ProductsDetail = ({ products, setProducts }) => {
   const { image, title, descriptoin, price, category } = thisProduct
   
   const addItem = () => {
-    {setProducts([...products, thisProduct]) }
+    // { setProducts([...products, thisProduct]) }
+    thisProduct()
     const calc = price += price
-
+    
+    console.log(addItem,'itttemm');
+    console.log(thisProduct(),'setproducts');
   }
 
   return (
@@ -33,7 +36,6 @@ const ProductsDetail = ({ products, setProducts }) => {
         <BsCartPlus style={{ marginRight: '5px'}} />
         ADD TO CART
 
-      console.log(onClick(),'lsjflsjflsjfls');
       </button>
 
     </div>
